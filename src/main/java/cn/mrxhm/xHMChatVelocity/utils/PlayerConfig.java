@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class Config {
+public class PlayerConfig {
     public static File config;
     public static String path = XHMChatVelocity.instance.getDataDirectory() + "\\" + "players.json";
 
@@ -50,7 +50,13 @@ public class Config {
         }
     }
 
-    public static void reloadConfig() {
+    public static void reload() {
+        loadConfig();
+        Players.init();
+        saveConfig();
+    }
+
+    public static void save() {
         saveConfig();
         loadConfig();
         Players.init();
