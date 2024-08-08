@@ -13,7 +13,6 @@ public class Broadcast {
      * @param message 消息
      */
     public static void broadcast(String message) {
-        // TODO: 实现广播功能
         for (Player player : XHMChatVelocity.instance.getServer().getAllPlayers()) {
             player.sendMessage(Component.text(message.replaceAll("&", "§")));
         }
